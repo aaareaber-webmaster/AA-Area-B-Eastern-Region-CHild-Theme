@@ -21,27 +21,6 @@ function child_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 20 );
 
-function alcoholicanonymous_child_enqueue_bootstrap() {
-    // Enqueue Bootstrap CSS
-    wp_enqueue_style( 
-        'bootstrap-css', 
-        get_stylesheet_directory_uri() . '/bootstrap-3.4.1-dist/css/bootstrap.min.css', 
-        array(), 
-        '3.4.1' 
-    );
-
-    // Enqueue Bootstrap JS (requires jQuery)
-    wp_enqueue_script( 
-        'bootstrap-js', 
-        get_stylesheet_directory_uri() . '/bootstrap-3.4.1-dist/js/bootstrap.min.js', 
-        array('jquery'), 
-        '3.4.1', 
-        true // Load in footer
-    );
-}
-
-add_action('wp_enqueue_scripts', 'alcoholicanonymous_child_enqueue_bootstrap');
-
 function area_child_enqueue_header_script() {
 	wp_enqueue_script(
 		'area-header',

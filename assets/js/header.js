@@ -34,6 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		resetMenu();
 	}
 
+	function resetPreparedState(container) {
+		container.querySelectorAll('.area-submenu-trigger').forEach(function (trigger) {
+			trigger.remove();
+		});
+
+		container.querySelectorAll('[data-mobile-prepared="true"]').forEach(function (item) {
+			delete item.dataset.mobilePrepared;
+		});
+	}
+
 	function openSubmenu(item) {
 		const submenu = item.querySelector(':scope > .sub-menu');
 		const link = item.querySelector(':scope > a');
@@ -60,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		header.append(backButton, title);
 
 		const clonedMenu = submenu.cloneNode(true);
+		resetPreparedState(clonedMenu);
 		clonedMenu.classList.add('area-mobile-submenu');
 
 		const parentItem = document.createElement('li');

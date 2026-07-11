@@ -1,12 +1,11 @@
 /**
-Theme Name: alcoholicanonymous child theme
-Author: Synapseworldwide
-Author URI: https://synapseworldwide.com/
-Description: This is a child theme of Astra theme
-Version: 1.0.0
+Theme Name: aaareaber child theme
+Author: Area B Eastern Region of Alcoholics Anonymous
+Author URI: https://aaareaber.org.au
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: alcoholicanonymous-child-theme
+Text Domain: aaareaber-child-theme
 Template: astra
 */
 
@@ -154,27 +153,17 @@ Template: astra
 
 @media (max-width: 921px) {
 	.area-menu-toggle {
-		display: flex !important;
+		display: flex;
 		flex: 0 0 44px;
-		width: 44px;
-		height: 44px;
 		margin: 0;
-		padding: 0;
-		border: 0;
-		background: transparent;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		cursor: pointer;
 	}
 
 	.area-menu-toggle > span:not(.screen-reader-text) {
-		display: block;
 		width: 27px;
-		height: 3px;
 		margin: 3px 0;
-		background: #f0543d;
-		border-radius: 999px;
 	}
 
 	.area-header-logo {
@@ -184,12 +173,7 @@ Template: astra
 	.area-header-logo img {
 		max-width: min(265px, calc(100vw - 100px));
 	}
-    .area-submenu-trigger {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-    
+
 	.area-primary-nav {
 		position: absolute;
 		top: 100%;
@@ -221,6 +205,7 @@ Template: astra
 		flex: 0 0 100%;
 		width: 100%;
 		padding: 10px 24px 20px;
+		background: #f0543d;
 		box-sizing: border-box;
 	}
 
@@ -236,13 +221,15 @@ Template: astra
 	.area-primary-menu > li,
 	.area-mobile-submenu > li {
 		position: relative;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.24);
 	}
 
-	.area-primary-menu a,
+	.area-primary-menu > li > a,
+	.area-primary-menu .sub-menu a,
 	.area-mobile-submenu a {
 		display: block;
-		padding: 14px 46px 14px 0;
+		padding: 15px 48px 15px 14px;
+		background: transparent;
 		color: #fff;
 		font-size: 15px;
 		font-weight: 600;
@@ -251,13 +238,16 @@ Template: astra
 
 	.area-primary-menu .sub-menu,
 	.area-mobile-submenu .sub-menu {
-		display: none !important;
+		display: none;
 	}
 
 	.area-submenu-trigger {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		position: absolute;
 		top: 50%;
-		right: 0;
+		right: 8px;
 		width: 42px;
 		height: 42px;
 		padding: 0;
@@ -275,7 +265,7 @@ Template: astra
 		align-items: center;
 		gap: 14px;
 		min-height: 54px;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	}
 
 	.area-menu-back {
@@ -297,26 +287,15 @@ Template: astra
 		color: #fff;
 		font-size: 16px;
 	}
-	
-	.area-primary-menu > li,
-	.area-mobile-submenu > li {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.24);
-	}
 
-	.area-primary-menu a,
-	.area-mobile-submenu a,
-	.area-menu-panel-title,
-	.area-menu-back,
-	.area-submenu-trigger {
-		color: #fff !important;
-	}
-
-	.area-primary-menu a:hover,
-	.area-primary-menu a:focus-visible,
+	.area-primary-menu > li > a:hover,
+	.area-primary-menu > li > a:focus-visible,
+	.area-primary-menu .sub-menu a:hover,
+	.area-primary-menu .sub-menu a:focus-visible,
 	.area-mobile-submenu a:hover,
 	.area-mobile-submenu a:focus-visible {
 		background: rgba(255, 255, 255, 0.12);
-		color: #fff !important;
+		color: #fff;
 	}
 
 	.area-mobile-parent-link a {
@@ -324,44 +303,21 @@ Template: astra
 		background: rgba(255, 255, 255, 0.1);
 	}
 
-	.area-primary-menu > li > a,
-	.area-mobile-submenu > li > a {
-		padding: 15px 48px 15px 14px;
-	}
-
-	.area-submenu-trigger {
-		right: 8px;
-	}
-
-	.area-menu-panel-header {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-	}
-
-	.area-menu-panel,
-	.area-menu-panel-sub,
-	.area-mobile-submenu,
-	.area-mobile-submenu .sub-menu {
-		background: #f0543d !important;
-	}
-
 	.area-mobile-submenu > li,
 	.area-mobile-submenu .sub-menu > li {
-		background: transparent !important;
+		background: transparent;
 	}
 
-	.area-mobile-submenu a,
-	.area-mobile-submenu .sub-menu a {
-		background: transparent !important;
-		color: #fff !important;
-	}
-
-	.area-mobile-submenu a:hover,
-	.area-mobile-submenu a:focus-visible {
-		background: rgba(255, 255, 255, 0.12) !important;
-		color: #fff !important;
+	.area-mobile-submenu,
+	.area-mobile-submenu .sub-menu {
+		background: #f0543d;
 	}
 
 }
+
+/*------------------------------------------------------------------------------
+                            GLOBAL CONTENT AND LAYOUT
+------------------------------------------------------------------------------*/
 
 section.ast-archive-description p {
     position: absolute;
@@ -370,30 +326,29 @@ section.ast-archive-description p {
 }
 
 span.uael-post__date {
-    font-size: 12px !important;
+    font-size: 12px;
 }
 
 span.uael-post__comments {
-    font-size: 12px !important;
+    font-size: 12px;
 }
 
+/*------------------------------------------------------------------------------
+                            WORDPRESS BLOCKS AND BLOG
+------------------------------------------------------------------------------*/
+
 .ast-archive-description .ast-archive-title span {
-    font-size: 30px !important;
+    font-size: 30px;
 }
 
 ul.wp-block-latest-posts__list.has-dates.wp-block-latest-posts li a:hover {
     color: #f0543d;
 }
 
-form#mc4wp-form-1 .elementor-divider-separator .elementor-divider__text.elementor-divider__element {
-    margin-left: 0 !important;
-    margin-right: 15px;
-}
-
 .wp-block-latest-posts.wp-block-latest-posts__list li {
     clear: both;
     margin-top: 1.5em;
-    color: #0c0c0c !important;
+    color: #0c0c0c;
     font-size: 16px;
     padding-bottom: 10px;
 }
@@ -403,14 +358,6 @@ ul.wp-block-latest-posts__list.has-dates.wp-block-latest-posts li a {
     font-size: 16px;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
-}
-
-address.tribe-events-calendar-list__event-venue.tribe-common-b2 span {
-    font-weight: 100;
-}
-
-.nav-links a, span {
-    font-size: 16px !important;
 }
 
 table a:hover {
@@ -426,13 +373,6 @@ h2.widget-title {
     font-size: 22px;
     font-weight: 500;
     margin-top: 0;
-}
-
-.tribe-events-page-template .search-form .search-field {
-    outline: 0;
-    font-weight: 400;
-    font-size: 18px;
-    height: 53px;
 }
 
 .search-form .search-field {
@@ -456,7 +396,7 @@ a:focus {
 }
 
 .subscribe-link a {
-    color: #fff !important;
+    color: #fff;
     font-family: "Poppins", Sans-serif;
     font-weight: 500;
     text-transform: uppercase;
@@ -474,6 +414,10 @@ a:focus {
     text-decoration: none;
 }
 
+/*------------------------------------------------------------------------------
+                                  ONESIGNAL
+------------------------------------------------------------------------------*/
+
 #onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-bottom-right {
     bottom: 43px !important;
     right: 43px !important;
@@ -482,6 +426,14 @@ a:focus {
 #onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-md .onesignal-bell-launcher-button {
     width: 67px !important;
     height: 48px;
+}
+
+.onesignal-bell-launcher-button:before {
+    content: "Subscribe";
+}
+
+.onesignal-bell-launcher-message.onesignal-bell-launcher-message-opened {
+    display: block !important;
 }
 
 ::-webkit-input-placeholder {
@@ -504,6 +456,10 @@ a:focus {
 .explore-more-button a:hover {
     text-decoration: none;
 }
+
+/*------------------------------------------------------------------------------
+                                  ELEMENTOR
+------------------------------------------------------------------------------*/
 
 .elementor-widget-container a {
     color: #f0543d;
@@ -537,14 +493,6 @@ p a:hover {
     color: #f0543d;
 }
 
-.onesignal-bell-launcher-button:before {
-    content: "Subscribe";
-}
-
-.onesignal-bell-launcher-message.onesignal-bell-launcher-message-opened {
-    display: block !important;
-}
-
 ul li a {
     color: #F0543D;
 }
@@ -555,14 +503,6 @@ table a {
 
 legend.gfield_label.gfield_label_before_complex {
     border: 0px;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
-
-.header-main-layout-1 .main-header-bar-navigation {
-    text-align: left;
-    border-top: 1px solid #f0543d;
-    height: 62px;
 }
 
 .search.search-results input.search-field {
@@ -585,15 +525,6 @@ div#nav_menu-6 .widget-title {
     visibility: hidden;
 }
 
-.main-header-menu .menu-item.focus > .sub-menu, .main-header-menu .menu-item:hover > .sub-menu {
-    right: auto;
-    left: 20px;
-}
-
-.ast-site-identity #header-form button:hover {
-    background: transparent;
-}
-
 .ast-row h2.widget-title {
     box-shadow: none;
     font-size: 20px;
@@ -607,14 +538,14 @@ div#nav_menu-6 .widget-title {
 }
 
 .ast-row article {
-    padding: 50px 0 !important;
+    padding: 50px 0;
 }
 
 .ast-row article a {
     font-weight: 600;
     font-size: 21px;
     color: #020202;
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 .ast-row article h2:hover {
@@ -628,9 +559,7 @@ div#nav_menu-6 .widget-title {
 }
 
 .ast-archive-description .ast-archive-title {
-    font-size: 40px;
-    font-size: 2.6666666666667rem;
-    font-size: 30px !important;
+    font-size: 30px;
     font-family: "Poppins", sans-serif;
     border-bottom: solid 1px #9999993b;
     padding-bottom: 18px;
@@ -640,11 +569,11 @@ div#nav_menu-6 .widget-title {
 .ast-separate-container .ast-archive-description, .ast-separate-container .ast-author-box {
     margin: 0;
     padding: 0;
-    background: none !important;
+    background: none;
 }
 
 .content-area.primary {
-    margin: 2em 0 !important;
+    margin: 2em 0;
 }
 
 .elementor-21 .elementor-element.elementor-element-438c33c .elementor-slide-button {
@@ -657,12 +586,16 @@ div#nav_menu-6 .widget-title {
     font-size: 20px;
 }
 
-a, .page-title {
+.elementor-element-3a0be9ee .elementor-post__excerpt {
+    display: none;
+}
+
+.elementor-element-4308b2ee a:hover {
     color: #f0543d;
 }
 
-.site-header {
-    border-bottom: 2px solid #f0543d;
+a, .page-title {
+    color: #f0543d;
 }
 
 abbr[title] {
@@ -673,16 +606,23 @@ span.posted-on .updated {
     display: none;
 }
 
-.main-header-menu .menu-item:first-child {
-    padding-left: 0;
-}
-
-.ast-button-wrap .menu-toggle {
-    height: 2.2em;
-}
-
 #primary {
     margin: 2em 0;
+}
+
+/*------------------------------------------------------------------------------
+                              THE EVENTS CALENDAR
+------------------------------------------------------------------------------*/
+
+address.tribe-events-calendar-list__event-venue.tribe-common-b2 span {
+    font-weight: 100;
+}
+
+.tribe-events-page-template .search-form .search-field {
+    outline: 0;
+    font-weight: 400;
+    font-size: 18px;
+    height: 53px;
 }
 
 .tribe-common-l-container.tribe-events-l-container {
@@ -693,10 +633,6 @@ span.posted-on .updated {
     background-color: #f0543d;
 }
 
-ul.sub-menu li.menu-item-has-children {
-    background: #f0543d !important;
-}
-
 .ast-pagination a, .page-links .page-link, .single .post-navigation a {
     color: #f0543d;
 }
@@ -705,6 +641,10 @@ ul.sub-menu li.menu-item-has-children {
     line-height: 1.45;
     color: #f0543d;
 }
+
+/*------------------------------------------------------------------------------
+                            MAILCHIMP FOR WORDPRESS
+------------------------------------------------------------------------------*/
 
 #mc4wp-form-1 {
     background-color: #f7f7f7;
@@ -719,6 +659,11 @@ ul.sub-menu li.menu-item-has-children {
 #mc4wp-form-1
 .elementor-widget-container {
     margin-bottom: 20px;
+}
+
+form#mc4wp-form-1 .elementor-divider-separator .elementor-divider__text.elementor-divider__element {
+    margin-left: 0;
+    margin-right: 15px;
 }
 
 #secondary li a:hover {
@@ -754,7 +699,7 @@ h2#recent-posts {
 
 #secondary li {
     margin-top: 1.50em;
-    color: #0c0c0c !important;
+    color: #0c0c0c;
     font-size: 16px;
     padding-bottom: 10px;
 }
@@ -787,13 +732,9 @@ ul.wp-block-latest-posts__list.wp-block-latest-posts {
     padding: 15px 20px 15px 20px;
 }
 
-.ast-header-break-point .ast-header-custom-item, .ast-header-break-point .main-header-menu {
-    background-color: #f0543d;
-}
-
 ::selection {
-    background-color: #1a73e8 !important;
-    color: #fff !important;
+    background-color: #1a73e8;
+    color: #fff;
 }
 
 #tribe-events-pg-template {
@@ -802,7 +743,7 @@ ul.wp-block-latest-posts__list.wp-block-latest-posts {
 }
 
 .tribe-common .tribe-common-anchor-thin {
-    border: 0 !important;
+    border: 0;
 }
 
 body.tribe_events-template-default {
@@ -814,16 +755,8 @@ body.tribe_events-template-default {
 }
 
 .tribe-common .tribe-common-anchor-thin:active, .tribe-common .tribe-common-anchor-thin:focus, .tribe-common .tribe-common-anchor-thin:hover {
-    border: 0 !important;
-    color: #f0543d !important;
-}
-
-.elementor-element-3a0be9ee .elementor-post__excerpt {
-    display: none;
-}
-
-.gform_wrapper.gravity-theme .gfield textarea.large {
-    height: 80px;
+    border: 0;
+    color: #f0543d;
 }
 
 body.post-type-archive-tribe_events {
@@ -831,20 +764,11 @@ body.post-type-archive-tribe_events {
 }
 
 .ast-separate-container {
-    background-color: #fff !important;
-}
-
-#primary-menu .menu-item + .menu-item > a:hover, #primary-menu .menu-item:first-child a:hover {
-    background: #ffffff30;
-    color: #fff !important;
+    background-color: #fff;
 }
 
 nav.tribe-events-nav-pagination a:hover {
-    color: #f0543d !important;
-}
-
-#primary-menu .menu-item + .menu-item > a:hover {
-    color: #ffffff !important;
+    color: #f0543d;
 }
 
 a:focus {
@@ -853,6 +777,14 @@ a:focus {
 
 footer a.menu-link:hover {
     color: #f0543d;
+}
+
+/*------------------------------------------------------------------------------
+                                GRAVITY FORMS
+------------------------------------------------------------------------------*/
+
+.gform_wrapper.gravity-theme .gfield textarea.large {
+    height: 80px;
 }
 
 #gform_submit_button_2 {
@@ -868,23 +800,6 @@ footer a.menu-link:hover {
     margin: auto;
     padding: 12px 24px;
     display: block;
-}
-
-.elementor-element-4308b2ee a:hover {
-    color: #f0543d !important;
-}
-
-ul.sub-menu li.current-menu-item {
-    background: #ffffff30;
-}
-
-ul#primary-menu li.current-menu-item > a {
-    background: #ffffff30;
-    color: #ffffff !important;
-}
-
-.main-navigation {
-    padding-left: 0 !important;
 }
 
 input[type="button"], input[type="submit"], input[type="reset"] {
@@ -954,7 +869,6 @@ a#learn-more {
     color: #FFFFFF;
     text-transform: uppercase;
     opacity: 1;
-    /* padding: 16px 40px; */
     font-size: 16px;
     width: 215px;
     height: 59px;
@@ -990,11 +904,11 @@ nav.elementor-pagination {
 }
 
 .tribe-events-event-meta:before, .tribe-events-event-meta ~ div:not(.tribe-events-event-meta, .event-tickets) {
-    border-top: 0px !important;
+    border-top: 0;
 }
 
 .tribe-events-back a {
-    font-weight: 400 !important;
+    font-weight: 400;
 }
 
 .tribe-events .tribe-events-calendar-list__event-date-tag-datetime {
@@ -1005,15 +919,14 @@ nav.elementor-pagination {
     text-align: center;
     background-image: url(https://aaareaber.org.au/wp-content/uploads/2021/12/AA-Events.png);
     background-size: cover;
-    /* color: #fff; */
     margin-right: 8px;
     width: 78px;
-    height: 78px !important;
+    height: 78px;
 }
 
 #tribe-events-content h1 {
     font-family: "Poppins", Sans-serif;
-    font-size: 20px !important;
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -1038,11 +951,11 @@ h3.tribe-events-widget-events-list__event-title.tribe-common-h7 a {
 }
 
 .tribe-events-widget .tribe-events-widget-events-list__event-date-tag {
-    width: 100px !important;
+    width: 100px;
 }
 
 .tribe-events-widget-events-list__event-datetime {
-    color: #f0543d !important;
+    color: #f0543d;
     font: normal normal normal 16px/25px Poppins;
 }
 
@@ -1066,10 +979,9 @@ time.tribe-events-widget-events-list__event-datetime {
     text-align: center;
     background-image: url(https://aaareaber.org.au/wp-content/uploads/2021/12/AA-Events.png);
     background-size: cover;
-    /* color: #fff; */
     margin-right: 8px;
     width: 78px;
-    height: 78px !important;
+    height: 78px;
 }
 
 .page-template-page-meetings {
@@ -1115,17 +1027,12 @@ header.tribe-events-widget-events-list__header h2, h2.tribe-events-widget-events
     margin: 0;
 }
 
-/* main a {
-    color: #f0543d !important;
-} */
-
 .page-template-page-meetings #content a, .page-template-page-meetings .page-title {
-    color: #f0543d !important;
-    /* font-family: 'Poppins', sans-serif; */
+    color: #f0543d;
 }
 
 .page-template-page-meetings #content li h2 a {
-    color: #f0543d !important;
+    color: #f0543d;
 }
 
 .page-template-page-meetings #primary ul li {
@@ -1139,7 +1046,7 @@ header.tribe-events-widget-events-list__header h2, h2.tribe-events-widget-events
 }
 
 span.elementor-post-date {
-    font-size: 12px !important;
+    font-size: 12px;
 }
 
 .search-submit {
@@ -1148,8 +1055,6 @@ span.elementor-post-date {
     padding: 0;
     position: relative;
     right: 25px;
-    /* top: -10px; */
-    /* bottom: 40%; */
     bottom: 0;
 }
 
@@ -1159,7 +1064,7 @@ span.elementor-post-date {
 }
 
 .search-submit:hover {
-    color: inherit !important;
+    color: inherit;
 }
 
 .search-field {
@@ -1169,69 +1074,8 @@ span.elementor-post-date {
     opacity: 1;
 }
 
-ul.sub-menu li a {
-    height: auto !important;
-}
-
-article.tribe-events-calendar-list__event {
-    padding: 0 !important;
-}
-
-#header-form {
-    display: none;
-}
-
-
-.ast-main-header-bar-alignment {
-    width: 100%;
-    margin-left: 0;
-}
-
-#primary-menu li a {
-    color: #fff;
-    padding: 10px 10px 5px;
-    font-family: "Poppins", Sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    height: 62px;
-}
-
-#primary-menu .sub-menu li a {
-    padding-bottom: 10px;
-}
-
-.main-header-menu .sub-menu {
-    width: 310px;
-}
-
-ul.sub-menu li:first-child > a {
-    padding-left: 10px !important;
-}
-
-.main-header-menu .menu-item {
-    position: relative;
-    padding: 0 20px;
-    color: #fff;
-}
-
-#primary-menu li a:last-child {
-    padding-right: 10px;
-}
-
-.main-header-menu .menu-item:last-child {
-    padding-right: 0 !important;
-}
-
-.main-header-bar {
-    background-image: linear-gradient(180deg, #ffffff 60%, #F0543D 0%) !important;
-}
-
-.site-branding, .site-logo-img, .ast-site-identity {
-    width: 100%;
-}
-
-li.ast-masthead-custom-menu-items.search-custom-menu-item.focus {
-    display: none;
+.tribe-events .tribe-events-calendar-list article.tribe-events-calendar-list__event {
+    padding: 0;
 }
 
 .elementor-element.elementor-element-b47e486.elementor-widget.elementor-widget-text-editor h1 {
@@ -1239,7 +1083,8 @@ li.ast-masthead-custom-menu-items.search-custom-menu-item.focus {
 }
 
 .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents {
-    margin-right: calc(100vw - 27vw);
+    margin-left: clamp(50px, calc(29vw - 258px), 205px);
+    margin-right: auto;
     margin-top: 8%;
 }
 
@@ -1248,28 +1093,6 @@ li.ast-masthead-custom-menu-items.search-custom-menu-item.focus {
     color: inherit;
     text-decoration: none;
     border-color: #f0543d;
-}
-
-.main-header-bar {
-    border-bottom-width: 0px;
-}
-
-.sub-menu {
-    background-color: #f0543d !important;
-}
-
-#primary-menu .sub-menu li a:hover {
-    color: #f0543d !important;
-}
-
-.sub-menu {
-    padding: 0px;
-}
-
-#primary-menu .sub-menu li {
-    margin-bottom: 12px;
-    padding: 0;
-    margin: 0;
 }
 
 h2.widgettitle {
@@ -1285,209 +1108,33 @@ footer a.menu-link {
 
 .ast-footer-overlay {
     font-size: 12px;
-    padding: 10px !important;
+    padding: 10px;
 }
 
-/*@media only screen and (min-width: 374px) and (max-width: 380px){
-	.elementor-21 .elementor-element.elementor-element-438c33c .elementor-slide-button  {
-        font-family: "Poppins", Sans-serif;
-        font-weight: 500;
-        background-color: #F0543D;
-        border-color: #F0543D;
-        padding: 4px 13px !important;
-        margin-left: calc(50% - 6.2vw) !important;
-        margin-right: 0;
-        white-space: nowrap;
-        font-size: 8px !important;
-    }
-}
+@media only screen and (max-width: 921px) {
+	.elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents {
+		margin-left: clamp(8px, calc(22vw - 48px), 100px);
+		margin-top: clamp(20px, 8vw, 62px);
+	}
 
-*/
-
-@media only screen and (min-width: 736px) and (max-width: 736px){
-	.elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents  {
-        margin-right: calc(106vw - 26vw) !important;
-        margin-top: 11% !important;
-    }
-}
-
-@media only screen and (min-width: 667px) and (max-width: 667px) {
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents  {
-        margin-right: calc(113vw - 26vw) !important;
-        margin-top: 11% !important;
-        }
-}
-
-@media only screen and (min-width: 1681px) and (max-width: 1920px) {
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents  {
-        margin-right: calc(100vw - 40.5vw);
-        margin-top: 8%;
-        }
-}
-
-	
-@media only screen and (max-width: 1600px) {
-	.elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents  {
-        margin-right: calc(100vw - 29vw);
-    }
-}
-
-/*
-@media only screen and (max-width: 1440px) {
-    .main-header-bar {
-        background-image: linear-gradient(180deg, #ffffff 55%, #F0543D 0%) !important;
-    }
-
-    .elementor-21 .elementor-element.elementor-element-f4a291d > .elementor-element-populated {
-        padding: 0px 30px 0px 30px;
-    }
-
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents {
-        margin-top: 8%;
-        margin-left: 11%;
-        margin-right: auto;
-    }
-}
-*/
-
-@media only screen and (min-device-width: 1200px) and (max-device-width: 1200px) {
-    .main-header-menu .menu-item {
-        position: relative;
-        padding: 0 22px 0 0px;
-    }
-}
-
-@media only screen and (min-device-width: 1280px) and (max-device-width: 1280px) {
-    .subscribe-link a {
-        padding: 20px 25px;
-    }
-
-    .header-main-layout-1 .main-header-bar-navigation {
-        height: 80px !important;
-    }
-
-    #primary-menu .sub-menu li a {
-        padding-bottom: 10px;
-    }
-
-    #primary-menu .menu-item + .menu-item > a:hover, #primary-menu .menu-item:first-child a:hover {
-        background: #ffffff30;
-        color: #fff !important;
-    }
-
-    .main-header-menu .menu-item {
-        position: relative;
-        padding: 0 11px !important;
-    }
-
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents {
-        margin-right: calc(100vw - 47vw) !important;
-        margin-top: 8%;
-    }
+	.elementor-21 .elementor-element.elementor-element-438c33c .elementor-slide-button {
+		font-family: "Poppins", Sans-serif;
+		font-weight: 500;
+		background-color: #F0543D;
+		border-color: #F0543D;
+		padding: 10px 15px;
+		margin-left: clamp(24px, calc(95px - 10.5vw), 70px);
+		margin-right: 0;
+		white-space: nowrap;
+		font-size: 15px;
+	}
 }
 
 @media only screen and (max-width: 768px) {
-    .subscribe-link {
-        margin: 30px;
-        text-align: center;
-    }
-
     .ast-row h2 {
         box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
         padding: 10px 30px 30px;
         width: 75%;
-    }
-
-    .ast-header-break-point .main-header-bar {
-        border-bottom-width: 0px;
-    }
-
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents {
-        margin-right: calc(100vw - 26vw);
-    }
-
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents {
-        margin-right: calc(100vw - 26vw);
-        margin-top: 11%;
-    }
-
-    .main-header-menu .menu-item {
-        padding: 0;
-    }
-
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-slide-button {
-        font-family: "Poppins", Sans-serif;
-        font-weight: 500;
-        background-color: #F0543D;
-        border-color: #F0543D;
-        padding: 10px 15px;
-        margin-left: calc(100% - 6.2vw);
-        margin-right: 0;
-        white-space: nowrap;
-        font-size: 15px;
-    }
-
-    .sub-menu {
-        background-color: inherit !important;
-    }
-
-    .main-header-bar {
-        background-image: linear-gradient(180deg, #ffffff 67%, #F0543D 0%) !important;
-    }
-}
-
-@media only screen and (min-device-width: 812px) and (max-device-width: 812px) {
-    .ast-header-break-point .main-header-bar {
-        border-bottom-width: 0px;
-    }
-
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents {
-        margin-right: calc(109vw - 27vw) !important;
-        margin-top: 11% !important;
-    }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 360px) {
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-slide-button {
-        font-family: "Poppins", Sans-serif;
-        font-weight: 500;
-        background-color: #F0543D;
-        border-color: #F0543D;
-        padding: 5px 16px;
-        margin-left: calc(32% - 6.2vw);
-        margin-right: 0;
-        white-space: nowrap;
-        font-size: 9px;
-        margin-top: 17px;
-    }
-}
-
-@media only screen and (min-device-width: 360px) and (max-device-width: 393px) {
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-slide-button {
-        font-family: "Poppins", Sans-serif;
-        font-weight: 500;
-        background-color: #F0543D;
-        border-color: #F0543D;
-        padding: 5px 16px;
-        margin-left: calc(52% - 6.2vw);
-        margin-right: 0;
-        white-space: nowrap;
-        font-size: 9px;
-        margin-top: 17px;
-    }
-}
-
-@media only screen and (min-device-width: 390px) and (max-device-width: 390px) {
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-slide-button {
-        font-family: "Poppins", Sans-serif;
-        font-weight: 500;
-        background-color: #F0543D;
-        border-color: #F0543D;
-        padding: 2px 8px;
-        margin-left: calc(52% - 6.2vw);
-        margin-right: 0;
-        white-space: nowrap;
-        font-size: 10px;
     }
 }
 
@@ -1498,43 +1145,16 @@ footer a.menu-link {
     }
 
     .subscribe-link {
-        margin: 0px;
-    }
-
-    .subscribe-link {
         margin: 15px 0 0;
+        text-align: center;
     }
 
     form#mc4wp-form-1 .elementor-divider-separator .elementor-divider__text.elementor-divider__element {
-        font-size: 15px !important;
+        font-size: 15px;
     }
 
     form#mc4wp-form-1 h5 {
         font-size: 16px;
-    }
-
-    .ast-header-break-point .ast-mobile-header-stack .ast-mobile-menu-buttons {
-        padding-top: .8em;
-        height: 90px;
-    }
-
-    .ast-button-wrap .menu-toggle.main-header-menu-toggle .mobile-menu {
-        font-size: 15px;
-        font-size: 17px;
-        font-weight: 600;
-    }
-
-    .ast-logo-title-inline .ast-site-identity {
-        -js-display: block;
-        display: block;
-    }
-
-    form#header-form {
-        width: 175px;
-    }
-
-    input.search-field {
-        width: 175px !important;
     }
 
     .footer-adv-widget-1 .widget:last-child {
@@ -1550,50 +1170,30 @@ footer a.menu-link {
         top: -11px;
     }
 
-    #header-form {
-        display: contents;
-    }
-
-    .ast-header-break-point .main-header-bar-navigation {
-        width: calc(102% + 40px);
-        margin: -30px -20px;
-    }
-
     .search-field {
-        width: auto !important;
+        width: auto;
     }
 
-    .elementor-repeater-item-bf5ab06 .elementor-button {
-        padding: 1px 1px;
-        font-size: 12px;
-    }
+	.elementor-21 .elementor-element.elementor-element-438c33c .elementor-slide-button {
+		padding: 5px 16px;
+		font-size: 10px;
+		margin-top: 17px;
+	}
 
-    .elementor-21 .elementor-element.elementor-element-438c33c .elementor-repeater-item-bf5ab06 .swiper-slide-contents {
-        margin-right: calc(100vw - 26vw);
-        margin-top: 10%;
-    }
-
-    .main-header-menu > .menu-item > .menu-link {
-        height: auto;
-    }
 }
 
-.tribe-events-widget-events-list__events {
-    padding: 20px 0px 0px 40px !important;
+.tribe-events-widget .tribe-events-widget-events-list__events {
+    padding: 20px 0 0 40px;
 }
 
-.tribe-events-widget-events-list__event-wrapper.tribe-common-g-col {
-    padding: 10px !important;
+.tribe-events-widget .tribe-events-widget-events-list__event-wrapper.tribe-common-g-col {
+    padding: 10px;
 }
 
 a.tribe-events-widget-events-list__view-more-link.tribe-common-anchor-thin {
-    padding: 0 !important;
     margin-left: 40px;
-}
-
-a.tribe-events-widget-events-list__view-more-link.tribe-common-anchor-thin {
-    color: #999999 !important;
-    padding: 10px 40px;
+    color: #999999;
+    padding: 0;
 }
 
 @media (max-width: 767px) {
@@ -1616,17 +1216,9 @@ a.tribe-events-widget-events-list__view-more-link.tribe-common-anchor-thin {
 }
 
 @media (max-width: 999px) {
-    form#header-form {
-        visibility: hidden;
-    }
-
     .tribe-events .tribe-events-calendar-list__event-date-tag {
         flex: none;
         position: relative;
         width: auto;
     }
 }
-
-/*a.tribe-events-widget-events-list__view-more-link.tribe-common-anchor-thin:hover {
-    border-bottom: none !important;
-}*/
