@@ -44,7 +44,7 @@ function aa_login_logo() { ?>
     <style type="text/css">
         body.login {background: #5e8183;}
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/aa-logo.svg);
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/aa-logo.svg);
             width: 200px; 
             height: 200px;
             background-size: contain;
