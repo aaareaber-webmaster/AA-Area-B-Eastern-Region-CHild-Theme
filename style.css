@@ -1183,10 +1183,11 @@ footer a.menu-link {
 }
 
 .tribe-events-widget .tribe-events-widget-events-list__events {
-    padding: 20px 0 0 40px;
+    padding: 20px 20px 20px 0;
 }
 
 .tribe-events-widget .tribe-events-widget-events-list__event-wrapper.tribe-common-g-col {
+    margin-left: 20px;
     padding: 10px;
 }
 
