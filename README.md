@@ -1,18 +1,18 @@
-## AA Area B Eastern Region Child Theme
+AA Area B Eastern Region Child Theme
 
 This is the WordPress child theme used for aaareaber.org.au.
 
-**Parent theme:**
+Parent theme:
 Astra
 
-**Required plugins:**
+Required plugins:
 - Elementor
 - The Events Calendar
 - Ultimate Addons for Elementor, if still used
 - Gravity Forms, if still used
 - Mailchimp for WordPress, if still used
 
-**Important files:**
+Important files:
 - style.css contains global theme styling.
 - template-parts/header-main-layout.php controls the custom site header.
 - assets/js/header.js controls the mobile menu toggle.
