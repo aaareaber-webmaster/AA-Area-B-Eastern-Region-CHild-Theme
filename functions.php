@@ -8,14 +8,25 @@
  * @since 1.0.0
  */
 
+function aaareaber_child_asset_version( string $relative_path ): string {
+	$asset_path = get_stylesheet_directory() . $relative_path;
+
+	return file_exists( $asset_path ) ? (string) filemtime( $asset_path ) : wp_get_theme()->get( 'Version' );
+}
+
 function child_enqueue_styles() {
-	$style_path = get_stylesheet_directory() . '/style.css';
+	wp_enqueue_style(
+		'local-fonts',
+		get_stylesheet_directory_uri() . '/assets/css/fonts.css',
+		array(),
+		aaareaber_child_asset_version( '/assets/css/fonts.css' )
+	);
 
 	wp_enqueue_style(
 		'alcoholicanonymous-child-theme-style',
 		get_stylesheet_directory_uri() . '/style.css',
-		array( 'astra-theme-css' ),
-		file_exists( $style_path ) ? filemtime( $style_path ) : CHILD_THEME_ALCOHOLICANONYMOUS_CHILD_THEME_VERSION,
+		array( 'astra-theme-css', 'local-fonts' ),
+		aaareaber_child_asset_version( '/style.css' ),
 		'all'
 	);
 }
@@ -26,18 +37,11 @@ function area_child_enqueue_header_script() {
 		'area-header',
 		get_stylesheet_directory_uri() . '/assets/js/header.js',
 		array(),
-		filemtime( get_stylesheet_directory() . '/assets/js/header.js' ),
+		aaareaber_child_asset_version( '/assets/js/header.js' ),
 		true
 	);
 }
 add_action( 'wp_enqueue_scripts', 'area_child_enqueue_header_script' );
-
-wp_enqueue_style(
-	'local-fonts',
-	get_stylesheet_directory_uri() . '/assets/css/fonts.css',
-	array(),
-	wp_get_theme()->get( 'Version' )
-);
 
 /**
  * Register footer menus.
@@ -46,10 +50,10 @@ wp_enqueue_style(
 function area_b_register_footer_menus(): void {
 	register_nav_menus(
 		array(
-			'footer_primary'   => __( 'Footer Primary Links', 'area-b' ),
-			'footer_secondary' => __( 'Footer Secondary Links', 'area-b' ),
-			'footer_tertiary'  => __( 'Footer Tertiary Links', 'area-b' ),
-			'footer_legal'     => __( 'Footer Legal Links', 'area-b' ),
+			'footer_primary'   => __( 'Footer Primary Links', 'aaareaber-child-theme' ),
+			'footer_secondary' => __( 'Footer Secondary Links', 'aaareaber-child-theme' ),
+			'footer_tertiary'  => __( 'Footer Tertiary Links', 'aaareaber-child-theme' ),
+			'footer_legal'     => __( 'Footer Legal Links', 'aaareaber-child-theme' ),
 		)
 	);
 }
@@ -58,13 +62,14 @@ add_action( 'after_setup_theme', 'area_b_register_footer_menus' );
 /**
  * Render the custom site footer.
  *
- * Disable Astra's existing footer widgets and copyright area in the
- * Customiser before enabling this.
+ * Use this footer instead of Astra's classic footer markup.
  */
 
 function area_b_render_custom_footer(): void {
 	get_template_part( 'template-parts/footer/site-footer' );
 }
+remove_action( 'astra_footer', 'astra_footer_markup' );
+remove_action( 'astra_footer_content', 'astra_footer_small_footer_template', 5 );
 add_action( 'astra_footer', 'area_b_render_custom_footer', 20 );
 
 /**
@@ -78,84 +83,55 @@ function area_b_enqueue_footer_styles(): void {
 		'area-b-footer',
 		get_stylesheet_directory_uri() . '/assets/css/footer.css',
 		array(),
-		file_exists( $stylesheet_path ) ? filemtime( $stylesheet_path ) : null
+		file_exists( $stylesheet_path ) ? filemtime( $stylesheet_path ) : wp_get_theme()->get( 'Version' )
 	);
 }
 add_action( 'wp_enqueue_scripts', 'area_b_enqueue_footer_styles' );
 
 function my_login_logo_url() {
-	$home_login_url="https://aaareaber.org.au/";
-    return $home_login_url;
-
+	return home_url( '/' );
 }
 
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 
-function aa_login_logo() { ?>
-    <style type="text/css">
-        body.login {background: #5e8183;}
-        #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/aa-logo.svg);
-            width: 200px; 
-            height: 200px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center center;
-            margin: 0 auto 20px auto;
-            display: block;
-        }
-    </style>
-<?php }
+function aa_login_logo() {
+	wp_enqueue_style(
+		'aaareaber-login',
+		get_stylesheet_directory_uri() . '/assets/css/login.css',
+		array(),
+		aaareaber_child_asset_version( '/assets/css/login.css' )
+	);
+}
 add_action( 'login_enqueue_scripts', 'aa_login_logo' );
 
 
 function my_login_logo_url_title() {
-    return 'Alcoholics Anonymous Australia - AA Area B Eastern Region Australia';
+	return 'Alcoholics Anonymous Australia - AA Area B Eastern Region Australia';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
-function replace_footer_notice () {
- 
-echo '<p id="footer-left" class="alignleft"><span id="footer-thankyou">Thank you for your service. :)';
- 
+function replace_footer_notice() {
+	return '<p id="footer-left" class="alignleft"><span id="footer-thankyou">Thank you for your service. :)</span></p>';
 }
  
-add_filter('admin_footer_text', 'replace_footer_notice');
+add_filter( 'admin_footer_text', 'replace_footer_notice' );
 
 
 function show_post_excerpt( $excerpt ) {
-    if ( post_password_required() )
-        $excerpt = '';
-    return $excerpt;
+	if ( post_password_required() ) {
+		$excerpt = '';
+	}
+
+	return $excerpt;
 }
 add_filter( 'the_excerpt', 'show_post_excerpt' );
 
-add_action( 'wp_footer', function() {
-    ?>
-    <script type="text/javascript">
-        const yearSpan = document.getElementById("year");
-        if (yearSpan) {
-            yearSpan.outerHTML = new Date().getFullYear();
-        }
-    </script>
-    <?php
-});
-
 /**
- * Filters out auto-update disabled warnings for plugins and 
- * persistent object cache warnings from Site Health
+ * Persistent object caching is intentionally not used on this site.
  */
-
-function filter_plugin_updates( $value ) {
-    if ( isset( $value ) && is_object( $value ) ) {
-        unset( $value->response['ultimate-elementor/ultimate-elementor.php'] );
-    }
-    return $value;
-}
-add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
-
 add_filter( 'site_status_tests', function( $tests ) {
-    unset( $tests['direct']['persistent_object_cache'] );
-    return $tests;
+	unset( $tests['direct']['persistent_object_cache'] );
+
+	return $tests;
 } );

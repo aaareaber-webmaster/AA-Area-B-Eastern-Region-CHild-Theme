@@ -53,7 +53,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 
 				<div class="area-b-footer__menu-column">
 					<h2 class="area-b-footer__heading">
-						<?php esc_html_e( 'Area B', 'area-b' ); ?>
+						<?php esc_html_e( 'Area B', 'aaareaber-child-theme' ); ?>
 					</h2>
 
 					<?php
@@ -62,7 +62,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 							'theme_location' => 'footer_primary',
 							'container'      => 'nav',
 							'container_class'=> 'area-b-footer__navigation',
-							'container_aria_label' => __( 'Area B footer links', 'area-b' ),
+							'container_aria_label' => __( 'Area B footer links', 'aaareaber-child-theme' ),
 							'menu_class'     => 'area-b-footer__menu',
 							'fallback_cb'    => false,
 							'depth'          => 1,
@@ -73,7 +73,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 
 				<div class="area-b-footer__menu-column">
 					<h2 class="area-b-footer__heading">
-						<?php esc_html_e( 'Service', 'area-b' ); ?>
+						<?php esc_html_e( 'Service', 'aaareaber-child-theme' ); ?>
 					</h2>
 
 					<?php
@@ -82,7 +82,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 							'theme_location' => 'footer_secondary',
 							'container'      => 'nav',
 							'container_class'=> 'area-b-footer__navigation',
-							'container_aria_label' => __( 'Service footer links', 'area-b' ),
+							'container_aria_label' => __( 'Service footer links', 'aaareaber-child-theme' ),
 							'menu_class'     => 'area-b-footer__menu',
 							'fallback_cb'    => false,
 							'depth'          => 1,
@@ -93,7 +93,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 
 				<div class="area-b-footer__menu-column">
 					<h2 class="area-b-footer__heading">
-						<?php esc_html_e( 'Information', 'area-b' ); ?>
+						<?php esc_html_e( 'Information', 'aaareaber-child-theme' ); ?>
 					</h2>
 
 					<?php
@@ -102,7 +102,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 							'theme_location' => 'footer_tertiary',
 							'container'      => 'nav',
 							'container_class'=> 'area-b-footer__navigation',
-							'container_aria_label' => __( 'Information footer links', 'area-b' ),
+							'container_aria_label' => __( 'Information footer links', 'aaareaber-child-theme' ),
 							'menu_class'     => 'area-b-footer__menu',
 							'fallback_cb'    => false,
 							'depth'          => 1,
@@ -121,7 +121,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 
 				<nav
 					class="area-b-footer__legal-navigation"
-					aria-label="<?php esc_attr_e( 'Footer legal links', 'area-b' ); ?>"
+					aria-label="<?php esc_attr_e( 'Footer legal links', 'aaareaber-child-theme' ); ?>"
 				>
 					<?php
 					if ( has_nav_menu( 'footer_legal' ) ) {
@@ -139,7 +139,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 						<ul class="area-b-footer__legal-menu">
 							<li>
 								<a href="<?php echo esc_url( $sitemap_url ); ?>">
-									<?php esc_html_e( 'Sitemap', 'area-b' ); ?>
+									<?php esc_html_e( 'Sitemap', 'aaareaber-child-theme' ); ?>
 								</a>
 							</li>
 						</ul>
@@ -154,7 +154,7 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 					<?php
 					printf(
 						/* translators: %s: Website name. */
-						esc_html__( '%s', 'area-b' ),
+						esc_html__( '%s', 'aaareaber-child-theme' ),
 						esc_html( $site_name )
 					);
 					?>

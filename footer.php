@@ -34,9 +34,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php astra_body_bottom(); ?>
 
 		<?php wp_footer(); ?>
-		<script>
-		jQuery('<header class="entry-header ast-no-thumbnail ast-no-meta" style="margin-bottom: 20px;"><h1 class="entry-title" itemprop="headline">Events</h1></header>').insertBefore('.tribe-events-page-template  header.tribe-events-header.tribe-events-header--has-event-search');
-		</script>
 	</body>
 
 </html>
