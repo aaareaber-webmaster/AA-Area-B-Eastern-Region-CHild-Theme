@@ -32,6 +32,57 @@ function area_child_enqueue_header_script() {
 }
 add_action( 'wp_enqueue_scripts', 'area_child_enqueue_header_script' );
 
+wp_enqueue_style(
+	'local-fonts',
+	get_stylesheet_directory_uri() . '/assets/css/fonts.css',
+	array(),
+	wp_get_theme()->get( 'Version' )
+);
+
+/**
+ * Register footer menus.
+ */
+
+function area_b_register_footer_menus(): void {
+	register_nav_menus(
+		array(
+			'footer_primary'   => __( 'Footer Primary Links', 'area-b' ),
+			'footer_secondary' => __( 'Footer Secondary Links', 'area-b' ),
+			'footer_tertiary'  => __( 'Footer Tertiary Links', 'area-b' ),
+			'footer_legal'     => __( 'Footer Legal Links', 'area-b' ),
+		)
+	);
+}
+add_action( 'after_setup_theme', 'area_b_register_footer_menus' );
+
+/**
+ * Render the custom site footer.
+ *
+ * Disable Astra's existing footer widgets and copyright area in the
+ * Customiser before enabling this.
+ */
+
+function area_b_render_custom_footer(): void {
+	get_template_part( 'template-parts/footer/site-footer' );
+}
+add_action( 'astra_footer', 'area_b_render_custom_footer', 20 );
+
+/**
+ * Load the custom footer stylesheet.
+ */
+
+function area_b_enqueue_footer_styles(): void {
+	$stylesheet_path = get_stylesheet_directory() . '/assets/css/footer.css';
+
+	wp_enqueue_style(
+		'area-b-footer',
+		get_stylesheet_directory_uri() . '/assets/css/footer.css',
+		array(),
+		file_exists( $stylesheet_path ) ? filemtime( $stylesheet_path ) : null
+	);
+}
+add_action( 'wp_enqueue_scripts', 'area_b_enqueue_footer_styles' );
+
 function my_login_logo_url() {
 	$home_login_url="https://aaareaber.org.au/";
     return $home_login_url;

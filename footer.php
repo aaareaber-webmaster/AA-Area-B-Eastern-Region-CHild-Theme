@@ -15,29 +15,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-			<?php astra_content_bottom(); ?>
+						<?php astra_content_bottom(); ?>
 
-			</div> <!-- ast-container -->
+					</div> <!-- ast-container -->
 
-		</div><!-- #content -->
+				</div><!-- #content -->
 
-		<?php astra_content_after(); ?>
+			<?php astra_content_after(); ?>
 
-		<?php astra_footer_before(); ?>
+			<?php astra_footer_before(); ?>
 
-		<?php astra_footer(); ?>
+			<?php astra_footer(); ?>
 
-		<?php astra_footer_after(); ?>
+			<?php astra_footer_after(); ?>
 
-	</div><!-- #page -->
+		</div><!-- #page -->
 
-	<?php astra_body_bottom(); ?>
+		<?php astra_body_bottom(); ?>
 
-	<?php wp_footer(); ?>
-<script>
-jQuery('<header class="entry-header ast-no-thumbnail ast-no-meta" style="margin-bottom: 20px;"><h1 class="entry-title" itemprop="headline">Events</h1></header>').insertBefore('.tribe-events-page-template  header.tribe-events-header.tribe-events-header--has-event-search');
-
-</script>
+		<?php wp_footer(); ?>
+		<script>
+		jQuery('<header class="entry-header ast-no-thumbnail ast-no-meta" style="margin-bottom: 20px;"><h1 class="entry-title" itemprop="headline">Events</h1></header>').insertBefore('.tribe-events-page-template  header.tribe-events-header.tribe-events-header--has-event-search');
+		</script>
 	</body>
 
 </html>
