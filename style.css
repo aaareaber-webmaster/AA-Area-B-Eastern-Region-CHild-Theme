@@ -916,17 +916,20 @@ nav.elementor-pagination {
     font-weight: 400;
 }
 
-.tribe-events .tribe-events-calendar-list__event-date-tag-datetime {
+.tribe-events .tribe-events-calendar-list__event-date-tag-datetime,
+.tribe-events-widget .tribe-events-widget-events-list__event-date-tag-datetime {
     display: flex;
+    flex: 0 0 78px;
     flex-direction: column;
-    height: 100%;
+    width: 78px;
+    height: 78px;
+    margin-right: 8px;
     padding-top: var(--tec-spacer-0);
     text-align: center;
     background-image: url(https://aaareaber.org.au/wp-content/uploads/2021/12/AA-Events.png);
-    background-size: cover;
-    margin-right: 8px;
-    width: 78px;
-    height: 78px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 #tribe-events-content h1 {
@@ -975,18 +978,6 @@ time.tribe-events-calendar-list__event-date-tag-datetime span {
 
 time.tribe-events-widget-events-list__event-datetime {
     font-family: 'Poppins', sans-serif;
-}
-
-.tribe-events-widget .tribe-events-widget-events-list__event-date-tag-datetime {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    text-align: center;
-    background-image: url(https://aaareaber.org.au/wp-content/uploads/2021/12/AA-Events.png);
-    background-size: cover;
-    margin-right: 8px;
-    width: 78px;
-    height: 78px;
 }
 
 .page-template-page-meetings {
