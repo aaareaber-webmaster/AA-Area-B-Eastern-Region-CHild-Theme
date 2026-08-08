@@ -419,48 +419,6 @@ a:focus {
     text-decoration: none;
 }
 
-/*------------------------------------------------------------------------------
-                                  ONESIGNAL
-------------------------------------------------------------------------------*/
-
-#onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-bottom-right {
-    bottom: 43px !important;
-    right: 43px !important;
-}
-
-#onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-md .onesignal-bell-launcher-button {
-    width: 67px !important;
-    height: 48px;
-}
-
-.onesignal-bell-launcher-button:before {
-    content: "Subscribe";
-}
-
-.onesignal-bell-launcher-message.onesignal-bell-launcher-message-opened {
-    display: block !important;
-}
-
-::-webkit-input-placeholder {
-    /* Edge */
-    font-weight: 400;
-    font-family: "Poppins", Sans-serif;
-}
-
-:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    font-weight: 400;
-    font-family: "Poppins", Sans-serif;
-}
-
-::placeholder {
-    font-weight: 400;
-    font-family: "Poppins", Sans-serif;
-}
-
-.explore-more-button a:hover {
-    text-decoration: none;
-}
 
 /*------------------------------------------------------------------------------
                                   ELEMENTOR
@@ -631,7 +589,7 @@ address.tribe-events-calendar-list__event-venue.tribe-common-b2 span {
 }
 
 .tribe-common-l-container.tribe-events-l-container {
-    padding: 32px 0 0 !important;
+    padding: 32px 0 0;
 }
 
 .tribe-events .tribe-events-c-search__button {
@@ -647,6 +605,12 @@ address.tribe-events-calendar-list__event-venue.tribe-common-b2 span {
     color: #f0543d;
 }
 
+@media (min-width: 768px) {
+.tribe-events-event-meta.primary, .tribe-events-event-meta.secondary {
+    width: 100%;
+}
+
+}
 /*------------------------------------------------------------------------------
                             MAILCHIMP FOR WORDPRESS
 ------------------------------------------------------------------------------*/
